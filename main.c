@@ -85,7 +85,7 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    double x = 5000.0 / 4096.0 ; // convert 12-bit result to mV value
+    double x = 5000.0 / 4096.0 ; // convert 12-bit result to 16 bit
     
 //    uint16_t timer_prev, timer_diff ;
 //    uint16_t timer_cur = TMR1_ReadTimer() ;
@@ -130,7 +130,7 @@ void main(void)
             
             uCAN_MSG cur_data1 ;
             cur_data1.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
-            cur_data1.frame.id = 0x470;
+            cur_data1.frame.id = 0x472;
             cur_data1.frame.dlc = 8;
             cur_data1.frame.data0 = battery_H;
             cur_data1.frame.data1 = battery_L;
@@ -143,7 +143,7 @@ void main(void)
             
             uCAN_MSG cur_data2;
             cur_data2.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
-            cur_data2.frame.id = 0x474;
+            cur_data2.frame.id = 0x473;
             cur_data2.frame.dlc = 8;
             cur_data2.frame.data0 = up_sol_H;
             cur_data2.frame.data1 = up_sol_L;
